@@ -1,0 +1,15 @@
+{
+	"subject":"Regarding: An Opening for ",
+	"subject_Dev": "Web Developer",
+	"subject_CV": "Image Processing/CV",
+	"body_head": "Hello,
+	 					I am writing this to introduce myself as graduate from 'SO AND SO'.",
+   	"first_para": "I",
+   	"second_para":"I also",
+	"body_Dev" : " have developed fully functional social networking site for financial network using Django-skeleton project. On the way integrating third party apps and APIs to enhance user experience. Used third party APIs to fetch data and display it as chart and graphs to end user. Guided team of interns to develop front-end using Bootstrap-wrappers (Demonite-Material Design to be particular).",
+	"body_CV":" have sound exposure to research and implementing complex algorithm from reputed journals. Apart from working on awesome web-development I also have interest in 'image processing/computer vision'. I am using SciKit, NumPy for this. I have used simple and novice machine learning techniques to implement face-recognition. I have also worked on NLP on my personal project. I believe this gives me rough idea on AI also",
+	"body_pre_cnclu_Dev": "I really want to be part of API and web development team as I believe it would be beneficial for the company.",
+	"body_pre_cnclu_CV":"I really want to be part of Image Processing, Computer Vision and algorithm development team as I believe it would be beneficial for the company.",
+	"body_cnclu":"I would welcome further opportunity to discuss this in interview with you. Please go through my resume to get the rough idea on my previous works.",
+	"portfolio_reference": " "
+}
