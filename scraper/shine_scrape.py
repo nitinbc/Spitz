@@ -49,16 +49,17 @@ def get_post_links(web_page):
 		links_to_page.append(i.get('href')) 
 	return links_to_page
 
-def get_job_detail(links_to_page):
+def get_job_detail(links_to_page, file_path):
 	"""Goes to 'job-detail page' and downloads relevent info. Saves
 	them to file in json  """
 	
 	url = 'https://www.shine.com'
 
-	target_folder = '../downloads/'
-	num = len(os.listdir('../downloads')) 
+	# target_folder = '../downloads/'
+	# num = len(os.listdir('../downloads')) 
 	list_to_json =[]
-	file_name = 'shine_'+str(num)+'.json'
+	# file_name = 'shine_'+str(num)+'.json'
+	file_name = file_path
 	count = 0
 	for link in links_to_page:
 		count += 1
@@ -95,16 +96,20 @@ def get_job_detail(links_to_page):
 		time.sleep(2)
 
 		
-	with open(target_folder+file_name, "a+") as f:
+	with open(file_name, "a+") as f:
 		io = StringIO()
 		json.dump(list_to_json, io, sort_keys=True, indent=4, separators=(',', ': '))
 		f.write(io.getvalue())
 	f.close()
 	return "Successfully Saved to downloads ......"
 
-def main(key_word, place):
-	web_page = get_webpage_by_params(key_word, place)
+def search_shine(*args, **kwargs):
+	file_path = kwargs['file_path']
+	if len(args)==2:
+		web_page = get_webpage_by_params(args[0], args[1])
+	elif len(args)==1:
+		web_page = get_webpage_by_link(args[0])
 	links = get_post_links(web_page)
-	print(get_job_detail(links))
+	print(get_job_detail(links, file_path))
 
-main('django python', 'mumbai hyderabad')
+# main('computer vision machine learning', 'mumbai hyderabad pune')

@@ -5,20 +5,20 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
-EMAIL = ''
-PASSWORD = ''
 
-def send_mail(recepient_id, template):
 
+def send_mail(recepient_id, template, resume_file):
+	EMAIL = ''
+	PASSWORD = ''
 	msg = MIMEMultipart()
 	msg['From']= EMAIL
 	msg['To']=recepient_id
 	msg['Subject'] = "Regarding: An Opening for Developer position"
-	body="My message for now" + template
+	body= template
 	msg.attach(MIMEText(body, 'plain'))
 
 	filename= "Resume.pdf"
-	attachment= open('../Files/Resume.pdf', "rb")
+	attachment= open(resume_file, "rb")
 
 
 	part = MIMEBase('application', 'octet-stream')
@@ -32,7 +32,8 @@ def send_mail(recepient_id, template):
 	smtpObj.starttls()
 	smtpObj.login(EMAIL, PASSWORD)
 	text = msg.as_string()
+	print('Sending mail to: {}'.format(recepient_id))
 	smtpObj.sendmail(EMAIL, recepient_id, text)
 	smtpObj.quit()
 
-send_mail('', 'template')
+# send_mail('', 'template')
