@@ -11,6 +11,9 @@ file_path = 'downloads/shine_'+num+'.json'
 resume_file = 'Files/Resume.pdf'
 template_path = 'email_gmail/template.json'
 
+
+#Search either by keywords or url
+# search_shine('python django', 'Mumbai Pune Hyderabad')
 search_shine('https://www.shine.com/job-search/python-django-jobs-in-mumbai-pune-hyderabad-9', file_path=file_path)
 
 num=str(len(os.listdir('downloads'))-2)
